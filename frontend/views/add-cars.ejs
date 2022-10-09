@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Cars - Challenge 05</title>
+    <!-- bootstrap 5 css -->
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/solid.css" integrity="sha384-Tv5i09RULyHKMwX0E8wJUqSOaXlyu3SQxORObAI08iUwIalMmN5L6AvlPX2LMoSE" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/fontawesome.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous"/>
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand d-flex flex-column align-item-start">
+        <a href="#" class="navbar-brand text-light">
+            <div class="display-5 font-weight-bold ml-3"><img src="assets/Rectangle-63.svg"></div>
+        </a>
+        <ul class="navbar-nav d-flex flex-column mt-5">
+            <li class="nav-item">
+                <a href="#" class="nav-link text-light"><img src="assets/Home.svg"></a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-light"><img src="assets/Administrator.svg"></a>
+            </li>
+        </ul>
+    </nav>
+    <nav class="navbar navbar-expand d-flex flex-column align-item-start" id="sidebar">
+        <a href="#" class="navbar-brand text-light">
+            <div class="display-5 font-weight-bold ml-3"><img src="assets/Rectangle-63.svg"></div>
+        </a>
+        <ul class="navbar-nav d-flex flex-column mt-5">
+            <li class="nav-item">
+                <a href="#" class="nav-link text-light"><img src="assets/Home.svg"></a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-light"><img src="assets/Administrator.svg"></a>
+            </li>
+        </ul>
+    </nav>
+    
+    <section class="my-container">
+        <div class="row p-2" style="width: auto; background-color:white;">
+            <div class="d-inline float-start">
+                <button class="btn" id="menu-btn"><i class="fa fa-bars"></i></button>
+                <div class="d-inline float-end">
+                    <input class="input-form form-control" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-primary" type="submit">Search</button>
+                    <img src="assets/user.svg"/>
+                    <p style="display: inline;">Unis Badri  <i class="fas fa-chevron-down"></i></p> 
+                </div>
+                
+            </div>
+            
+         </div>
+         <div class="container">
+         <div class="container-breadcrumb">
+            <nav style="--bs-breadcrumb-divider: '>'!important;" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Cars</a></li>
+                    <li class="breadcrumb-item"><a href="/">List Cars</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Add New Cars</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="d-inline float-start pt-4">
+            <h3>Add New Cars</h3>
+        </div>
+    </div>
+    <div class="container container-form" style="display: block; background-color: white; border-radius: 10px;">
+        <div class="container">
+            <div class="modal-body" style="padding: 25px;">
+                <form class="form-horizontal" action="/add-cars" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="nama" class="col-sm-2 control-label">Nama<span style="color: red;">*</span></label>
+                        <div class="col-sm-10">
+                            <input type="text" name="nama" class="form-control" id="nama" placeholder="Nama" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="sewa" class="col-sm-2 control-label">Sewa Per Hari<span style="color: red;">*</span></label>
+                        <div class="col-sm-10">
+                            <input type="number" name="sewa" class="form-control" id="sewa" placeholder="Rp 0,-" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="ukuran" class="col-sm-2 control-label">Ukuran<span style="color: red;">*</span></label>
+                        <div class="col-sm-10">
+                            <select class="form-select" id="ukuran" name="ukuran" required>
+                                <option value="" selected>ukuran</option>
+                                <option value="small">small</option>
+                                <option value="medium">medium</option>
+                                <option value="big">big</option>
+                            </select>
+                            <!-- <input type="text" name="ukuran" class="form-control" id="ukuran" placeholder="Small"> -->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="foto" class="col-sm-2 control-label">Foto<span style="color: red;">*</span></label>
+                        <div class="col-sm-10">
+                            <input type="file" name="foto" class="form-control" id="foto" required/>
+                        </div>
+                        <p>File size max 2MB</p>
+                    </div>
+                    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                        <div class="btn-group" role="group" aria-label="First group">
+                            <a href="/" class="btn btn-cancel">Cancel</a>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Second group" style="margin-left:20px;">
+                            <button class="btn btn-primary" type="submit">Save</button>
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+        
+    </div>    
+    </section>
+    
+   
+    <!-- bootstrap js -->
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <!-- custom js -->
+    <script>
+        var menu_btn = document.querySelector("#menu-btn")
+        var sidebar = document.querySelector("#sidebar")
+        var container = document.querySelector(".my-container")
+        menu_btn.addEventListener("click", () => {
+            sidebar.classList.toggle("active-nav")
+            container.classList.toggle("active-cont")
+        })
+    </script>
+</body>
+</html>
