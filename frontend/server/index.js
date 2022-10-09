@@ -74,7 +74,7 @@ app.post(
       const fileBase64 = req.file.buffer.toString("base64");
       const file = `data:${req.file.mimetype};base64,${fileBase64}`;
 
-      cloudinary.uploader.upload(file, { folder: 'test' }, async function (err, result) {
+      cloudinary.uploader.upload(file, { folder: 'coba' }, async function (err, result) {
           if (!!err) {
               console.log(err);
               return res.status(400).json({
